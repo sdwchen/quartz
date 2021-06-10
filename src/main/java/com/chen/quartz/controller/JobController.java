@@ -14,10 +14,12 @@ import java.util.Map;
 
 @RestController
 public class JobController {
-
-    @Autowired
     private Scheduler scheduler;
-
+    // set方式注入bean
+    @Autowired
+    private void setScheduler(Scheduler scheduler){
+       this.scheduler=scheduler;
+    }
 
     @GetMapping(value = "/addjob")
     public void addjob() throws Exception {

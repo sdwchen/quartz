@@ -7,3 +7,16 @@ server:
 spring:
   application:
     name: chen
+#数据库连接
+  datasource:
+    url: jdbc:mysql://localhost:3306/quartz?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123456
+    username: mysql
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+    #实体类的位置
+  type-aliases-package: com.chen.quartz.entity
+logging:
+  level:
+    com.chen.quartz.dao : debug
